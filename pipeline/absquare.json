@@ -1,0 +1,79 @@
+{
+	"name": "absquare",
+	"properties": {
+		"activities": [
+			{
+				"name": "a",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "a",
+					"value": "5"
+				}
+			},
+			{
+				"name": "b",
+				"type": "SetVariable",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "b",
+					"value": 10
+				}
+			},
+			{
+				"name": "output",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "a",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "output",
+					"value": {
+						"value": "@mul(variables('a'),variables('a'))",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"5": {
+				"type": "Integer"
+			},
+			"a": {
+				"type": "String"
+			},
+			"b": {
+				"type": "Integer"
+			},
+			"output": {
+				"type": "Integer"
+			}
+		},
+		"folder": {
+			"name": "copy data"
+		},
+		"annotations": []
+	}
+}
