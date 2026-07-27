@@ -59,6 +59,30 @@
 					"variableName": "b",
 					"value": "10"
 				}
+			},
+			{
+				"name": "finaloutput",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "output",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "final",
+					"value": {
+						"value": "@string(add(mul(int(variables('a')),int(variables('b'))),mul(int(variables('a')),int(variables('b')))))",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"variables": {
@@ -69,6 +93,9 @@
 				"type": "String"
 			},
 			"b": {
+				"type": "String"
+			},
+			"final": {
 				"type": "String"
 			}
 		},
