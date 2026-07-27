@@ -29,6 +29,36 @@
 					"variableName": "breadth",
 					"value": "10"
 				}
+			},
+			{
+				"name": "area",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "length",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "Breadth",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "area",
+					"value": {
+						"value": "@string(min(int(variables('length')),int(variables('breadth'))))",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"variables": {
@@ -39,6 +69,9 @@
 			"breadth": {
 				"type": "String",
 				"defaultValue": "3"
+			},
+			"area": {
+				"type": "String"
 			}
 		},
 		"folder": {
