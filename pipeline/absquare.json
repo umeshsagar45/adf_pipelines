@@ -79,7 +79,7 @@
 				"typeProperties": {
 					"variableName": "final",
 					"value": {
-						"value": "@string(add(variables('output'),add(mul(int(variables('a')),int(variables('b'))),mul(int(variables('a')),int(variables('b'))))))",
+						"value": "@string(add(int(variables('output')),add(mul(int(variables('a')),int(variables('b'))),mul(int(variables('a')),int(variables('b'))))))",
 						"type": "Expression"
 					}
 				}
