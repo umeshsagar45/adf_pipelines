@@ -1,9 +1,9 @@
 {
-	"name": "1-COPY-sql",
+	"name": "Copy-ADL",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data2",
+				"name": "Copy-ADL",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -16,9 +16,15 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "SqlServerSource",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
 					},
 					"sink": {
 						"type": "DelimitedTextSink",
@@ -43,7 +49,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SqlServerTable1",
+						"referenceName": "ds_input",
 						"type": "DatasetReference"
 					}
 				],
@@ -58,8 +64,6 @@
 		"folder": {
 			"name": "copy data"
 		},
-		"annotations": [],
-		"lastPublishTime": "2026-07-27T03:42:47Z"
-	},
-	"type": "Microsoft.DataFactory/factories/pipelines"
+		"annotations": []
+	}
 }
