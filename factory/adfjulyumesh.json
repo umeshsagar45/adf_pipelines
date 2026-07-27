@@ -1,0 +1,15 @@
+{
+	"name": "adfjulyumesh",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e32b5432-2f2e-4bb4-89fd-a8316e2f6e6e",
+		"tenantId": "2ae239e5-2b90-4b7c-933f-f4d944e2e0d6"
+	}
+}
