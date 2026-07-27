@@ -1,6 +1,12 @@
 {
 	"name": "adfjulyumesh",
 	"properties": {
+		"globalParameters": {
+			"envi": {
+				"type": "string",
+				"value": "dev"
+			}
+		},
 		"trustModeClaimForMi": {
 			"value": "Disabled",
 			"editable": true
