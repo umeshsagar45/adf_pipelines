@@ -25,6 +25,12 @@
 						"dependencyConditions": [
 							"Succeeded"
 						]
+					},
+					{
+						"activity": "b",
+						"dependencyConditions": [
+							"Succeeded"
+						]
 					}
 				],
 				"policy": {
@@ -35,9 +41,23 @@
 				"typeProperties": {
 					"variableName": "output",
 					"value": {
-						"value": "@string(mul(int(variables('a')),int(variables('a'))))\r\n",
+						"value": "@string(add(mul(int(variables('a')),int(variables('a'))),mul(int(variables('b')),int(variables('b')))))",
 						"type": "Expression"
 					}
+				}
+			},
+			{
+				"name": "b",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "b",
+					"value": "10"
 				}
 			}
 		],
@@ -46,6 +66,9 @@
 				"type": "String"
 			},
 			"output": {
+				"type": "String"
+			},
+			"b": {
 				"type": "String"
 			}
 		},
