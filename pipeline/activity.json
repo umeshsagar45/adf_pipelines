@@ -3,16 +3,44 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Set variable1",
+				"name": "length",
 				"type": "SetVariable",
 				"dependsOn": [],
 				"policy": {
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "length",
+					"value": "5"
+				}
+			},
+			{
+				"name": "Breadth",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "breadth",
+					"value": "10"
+				}
 			}
 		],
+		"variables": {
+			"length": {
+				"type": "String",
+				"defaultValue": "2"
+			},
+			"breadth": {
+				"type": "String",
+				"defaultValue": "3"
+			}
+		},
 		"folder": {
 			"name": "copy data"
 		},
