@@ -192,11 +192,8 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "ds_output",
-						"type": "DatasetReference",
-						"parameters": {
-							"folder": "backup2/"
-						}
+						"referenceName": "DC_empty",
+						"type": "DatasetReference"
 					}
 				]
 			}
