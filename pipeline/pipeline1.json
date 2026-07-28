@@ -23,9 +23,9 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "list",
+								"variableName": "destination",
 								"value": {
-									"value": "@item()",
+									"value": "@{mul(item(),2)}",
 									"type": "Expression"
 								}
 							}
@@ -46,7 +46,7 @@
 				]
 			},
 			"destination": {
-				"type": "Array"
+				"type": "String"
 			}
 		},
 		"annotations": []
