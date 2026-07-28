@@ -47,6 +47,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"expression": {
+						"value": "@equals(activity('Get Metadata1').output.exists,true)",
+						"type": "Expression"
+					},
 					"ifFalseActivities": [
 						{
 							"name": "Fail1",
@@ -118,10 +122,7 @@
 									"referenceName": "ds_output",
 									"type": "DatasetReference",
 									"parameters": {
-										"folder": {
-											"value": "@equals(activity('Get Metadata1').output.exists,true)",
-											"type": "Expression"
-										}
+										"folder": "backup/"
 									}
 								}
 							]
