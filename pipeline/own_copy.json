@@ -155,6 +155,8 @@
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
+							"wildcardFolderPath": "folder1/",
+							"wildcardFileName": "*",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -193,7 +195,7 @@
 						"referenceName": "ds_output",
 						"type": "DatasetReference",
 						"parameters": {
-							"folder": "backup/"
+							"folder": "backup2/"
 						}
 					}
 				]
