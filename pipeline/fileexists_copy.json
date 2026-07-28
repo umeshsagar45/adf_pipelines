@@ -52,6 +52,19 @@
 						"value": "@equals(activity('Meta info').output.exists, true)",
 						"type": "Expression"
 					},
+					"ifFalseActivities": [
+						{
+							"name": "Fail",
+							"description": "",
+							"type": "Fail",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"message": "No files",
+								"errorCode": "404"
+							}
+						}
+					],
 					"ifTrueActivities": [
 						{
 							"name": "Copy data1",
