@@ -8,6 +8,10 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@variables('list')",
+						"type": "Expression"
+					},
 					"activities": [
 						{
 							"name": "Set variable1",
@@ -21,7 +25,7 @@
 							"typeProperties": {
 								"variableName": "list",
 								"value": {
-									"value": "@item()",
+									"value": "@string(item())",
 									"type": "Expression"
 								}
 							}
@@ -34,7 +38,11 @@
 			"list": {
 				"type": "Array",
 				"defaultValue": [
-					"[1,,2,3,4,5]"
+					1,
+					2,
+					3,
+					4,
+					5
 				]
 			},
 			"destination": {
