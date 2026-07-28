@@ -20,7 +20,10 @@
 						"type": "DatasetReference"
 					},
 					"fieldList": [
-						"exists"
+						"exists",
+						"childItems",
+						"itemName",
+						"itemType"
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
@@ -75,6 +78,8 @@
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
 										"recursive": true,
+										"wildcardFolderPath": "folder1/",
+										"wildcardFileName": "*",
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
