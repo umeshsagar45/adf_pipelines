@@ -71,6 +71,8 @@
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
 										"recursive": true,
+										"wildcardFolderPath": "28/",
+										"wildcardFileName": "*",
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
@@ -110,7 +112,10 @@
 							"outputs": [
 								{
 									"referenceName": "ds_output",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"folder": "dest_28/"
+									}
 								}
 							]
 						}
