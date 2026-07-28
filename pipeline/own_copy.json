@@ -82,7 +82,7 @@
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
 										"recursive": true,
-										"wildcardFolderPath": "folder/",
+										"wildcardFolderPath": "folder1/",
 										"wildcardFileName": "*",
 										"enablePartitionDiscovery": false
 									},
@@ -193,7 +193,10 @@
 				"outputs": [
 					{
 						"referenceName": "DC_empty",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"backup": "backup/"
+						}
 					}
 				]
 			}
